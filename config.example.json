@@ -1,0 +1,5 @@
+{
+  "source_repo": "path/to/guardian",
+  "source_github": "",
+  "max_parallel_tasks": 1
+}
