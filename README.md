@@ -16,7 +16,7 @@
 
 > 按调度指引分析 26.2 到 26.3 的全部变更，报告放到 reports/26.3/。
 
-范围排除起点、包含终点，对其中每个提交与父提交作比较。分析采用 [报告指引](prompts/snapshot_behavior_analysis.md)。
+范围排除起点、包含终点，对其中每个提交与父提交作比较。分析采用 [报告指引](prompts/snapshot_analysis_worker.md)。
 
 手动准备材料的命令：
 

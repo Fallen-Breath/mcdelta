@@ -136,7 +136,7 @@ def prepare(arguments):
         "start_version": start, "end_version": end, "release": release,
         "work_directory": str(work),
         "source_github": config.get("source_github", "").rstrip("/").removesuffix(".git"),
-        "prompt": str(ROOT / "prompts/snapshot_behavior_analysis.md"),
+        "prompt": str(ROOT / "prompts/snapshot_analysis_worker.md"),
         "analyses": analyses,
     }
     if arguments.plan_only:

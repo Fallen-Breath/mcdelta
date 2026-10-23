@@ -1,6 +1,6 @@
 # 报告写作要求
 
-本文整理报告写作方面已确认的要求及其原因，供维护分析指引时参考。分析任务所需的指令由 `prompts/snapshot_behavior_analysis.md` 独立提供。
+本文整理报告写作方面已确认的要求及其原因，供维护分析指引时参考。分析任务所需的指令由 `prompts/snapshot_analysis_worker.md` 独立提供。
 
 ## 内容范围
 

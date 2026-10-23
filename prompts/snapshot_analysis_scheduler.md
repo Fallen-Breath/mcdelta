@@ -1,6 +1,6 @@
 # Minecraft 版本分析调度指引
 
-在 mcdelta 项目中，将用户指定版本范围的批量分析作为一个任务。分析要求由 `prompts/snapshot_behavior_analysis.md` 提供。
+在 mcdelta 项目中，将用户指定版本范围的批量分析作为一个任务。分析要求由 `prompts/snapshot_analysis_worker.md` 提供。
 
 读取项目根目录的 `config.local.json`。执行 `python scripts/prepare_snapshots.py --from <起点> --to <终点> --release <报告所属正式版>`，导出本任务所需的完整源码、创建各版本分析的空工作目录，并生成集中记录分析输入的 `task.json`。范围排除起点、包含终点，对其中每个提交与父提交作比较。
 
