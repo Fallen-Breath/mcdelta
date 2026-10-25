@@ -76,6 +76,14 @@ def plan(repo, start, end):
             names[commit] = version(repo, commit)
         return names[commit]
 
+    versions = {}
+    for commit in commits:
+        versions.setdefault(name(commit), []).append(commit)
+    for matching_commits in versions.values():
+        if len(matching_commits) > 1:
+            for commit in matching_commits:
+                names[commit] = safe_name(git_text(repo, "show", "-s", "--format=%s", commit))
+
     comparisons = []
     for commit in commits:
         parent = git_text(repo, "rev-parse", f"{commit}^1")
