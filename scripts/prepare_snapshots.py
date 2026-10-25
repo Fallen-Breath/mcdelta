@@ -57,8 +57,12 @@ def resolve(repo, query):
 
 def version(repo, commit):
     result = git(repo, "show", f"{commit}:{VERSION_FILE}", check=False)
-    value = json.loads(result.stdout)["id"] if not result.returncode else git_text(repo, "show", "-s", "--format=%s", commit)
-    return safe_name(value)
+    if not result.returncode:
+        try:
+            return safe_name(json.loads(result.stdout)["id"])
+        except ValueError:
+            pass
+    return safe_name(git_text(repo, "show", "-s", "--format=%s", commit))
 
 
 def plan(repo, start, end):
