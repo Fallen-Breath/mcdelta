@@ -55,10 +55,10 @@
 
 ## 代码出处
 
-- 在条目末尾注明版本并附简短说明，使代码实现可以溯源。
+- 在条目末尾用无序列表列出出处，一行一个位置，格式为 `- <简短说明> [<版本>](<出处地址>)`。
 - `task.json` 顶层的 `source_github` 非空时，使用 Markdown 链接，地址为：
   `<source_github>/blob/<对应版本的提交哈希>/<源码相对路径>#L<行号>`。
-- `source_github` 为空时，使用相对于本地源码仓库根目录的路径和行号，路径以 `/` 分隔。
+- `source_github` 为空时，链接地址使用相对于本地源码仓库根目录的路径和行号，格式为 `<源码相对路径>:<行号>`，路径以 `/` 分隔。
 - 引用旧版行为时，使用基准版本的提交与行号。
 
 ## 格式模板与内容示例
@@ -94,7 +94,10 @@
 
 <可选：展开值得单独解释的直接后果。版本对比已充分表达时，省略整个栏目。>
 
-代码出处：<按版本标注关键源码或数据的相对路径、行号及简短说明。>
+代码出处：
+
+- <简短说明> [<版本>](<出处地址>)
+- <另一处的简短说明> [<版本>](<出处地址>)
 
 ## <完整展开的修改条目 2 的标题>
 
@@ -105,7 +108,10 @@
 - <简述一项简单修改的条件及新旧表现差异。>
 - <按需列出同一机制或使用场景的另一项简单修改。>
 
-代码出处：<按版本标注对应源码或数据的相对路径、行号及简短说明。>
+代码出处：
+
+- <简短说明> [<版本>](<出处地址>)
+- <另一处的简短说明> [<版本>](<出处地址>)
 ```
 
 ### 内容示例
@@ -131,7 +137,10 @@
 - Snapshot 3：落点检查只限制目标中心的位置。在满足其他落点条件时，可以接受身体部分越界的位置。
 - Snapshot 4：落点检查同时考虑实体身体与世界边界的碰撞，拒绝上述位置。
 
-代码出处：随机传送落点检查（`26.4-snapshot-4 · src/main/java/net/minecraft/world/entity/LivingEntity.java:3720`）、世界边界碰撞检查（`26.4-snapshot-4 · src/main/java/net/minecraft/world/level/CollisionGetter.java:59`）。
+代码出处：
+
+- 随机传送落点检查 [26.4-snapshot-4](src/main/java/net/minecraft/world/entity/LivingEntity.java:3720)
+- 世界边界碰撞检查 [26.4-snapshot-4](src/main/java/net/minecraft/world/level/CollisionGetter.java:59)
 
 ## 唱片机新增箱子轮播模式
 
@@ -156,12 +165,20 @@
 - 利用播放信号从 15 降为 0 来检测唱片播放结束的电路，在箱子轮播模式下失去这一触发条件。
 - 玩家或漏斗取出当前唱片后，如果上方箱子里还有唱片，唱片机会再次自动取片并播放。如果装置通过取出唱片停止播放，就需要同时控制上方箱子的供片。
 
-代码出处：箱子轮播条件（`26.4-snapshot-4 · src/main/java/net/minecraft/world/level/block/entity/JukeboxBlockEntity.java:219`）、唱片选择与交换（`26.4-snapshot-4 · src/main/java/net/minecraft/world/level/block/entity/JukeboxBlockEntity.java:232`）、换片与方块更新顺序（`26.4-snapshot-4 · src/main/java/net/minecraft/world/level/block/entity/JukeboxBlockEntity.java:67`）、播放信号输出（`26.4-snapshot-4 · src/main/java/net/minecraft/world/level/block/JukeboxBlock.java:112`）。
+代码出处：
+
+- 箱子轮播条件 [26.4-snapshot-4](src/main/java/net/minecraft/world/level/block/entity/JukeboxBlockEntity.java:219)
+- 唱片选择与交换 [26.4-snapshot-4](src/main/java/net/minecraft/world/level/block/entity/JukeboxBlockEntity.java:232)
+- 换片与方块更新顺序 [26.4-snapshot-4](src/main/java/net/minecraft/world/level/block/entity/JukeboxBlockEntity.java:67)
+- 播放信号输出 [26.4-snapshot-4](src/main/java/net/minecraft/world/level/block/JukeboxBlock.java:112)
 
 ## 界面操作调整
 
 - 编辑书与笔到第 100 页时，新版隐藏继续翻页的按钮；旧版仍显示该按钮，点击后页码保持不变。
 - 点击命令补全列表中的候选项时，新版只接受鼠标左键；旧版右键和中键也可以选取候选项。
 
-代码出处：书与笔翻页按钮（`26.4-snapshot-4 · src/main/java/net/minecraft/client/gui/screens/inventory/BookEditScreen.java:164`）、命令补全点击处理（`26.4-snapshot-4 · src/main/java/net/minecraft/client/gui/components/CommandSuggestions.java:592`）。
+代码出处：
+
+- 书与笔翻页按钮 [26.4-snapshot-4](src/main/java/net/minecraft/client/gui/screens/inventory/BookEditScreen.java:164)
+- 命令补全点击处理 [26.4-snapshot-4](src/main/java/net/minecraft/client/gui/components/CommandSuggestions.java:592)
 ```
